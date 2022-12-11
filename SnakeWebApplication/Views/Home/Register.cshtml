@@ -1,0 +1,49 @@
+﻿@model RegisterModel
+
+@using Microsoft.AspNetCore.Mvc;
+@{
+    ViewData["Title"] = "Register Page";
+}
+<label>REGISTER</label>
+<div class="text-center">
+    <div>
+        
+        <table>
+            @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+            {
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Username)</td>
+                            <td>@Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            <td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>@Html.ValidationMessageFor(model => model.Username)</td>
+                        </tr>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <tr>
+                            <td>@Html.LabelFor(model => model.Password) </td>
+                            <td>@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                        </tr>
+                    </div>
+                </div>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="name" class="btn btn-success" value="Register"/>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
