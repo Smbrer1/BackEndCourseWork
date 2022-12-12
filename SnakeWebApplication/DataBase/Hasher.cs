@@ -22,7 +22,7 @@ public static class Hasher
         // Convert back to a string, removing the '-' that BitConverter adds
         var hash = BitConverter
             .ToString(hashBytes)
-            .Replace("-", String.Empty);
+            .Replace("-", string.Empty);
 
         return hash;
     }
